@@ -1,0 +1,57 @@
+p {
+	color:magenta;
+	text-align:left;
+	}
+h2 {
+	color:blue;
+	text-align:center;
+	}
+h1 {
+	font-family: chalkboard;
+	font-size: 30px;
+	font-weight: bold;
+	background-color:blue;
+	width:99%;
+	height:100%;
+	margin:5px;
+	padding-top:10px;
+	padding-bottom:10px;
+	border:3px solid green;
+	}
+
+			h2,h3,h4,h5,h6 {
+				font-family: chalkboard;
+				font-size: 20px;
+				font-weight: italic;
+				background-color:magenta;
+				width:99%;
+				height:100%;
+				margin:5px;
+				padding-top:10px;
+				padding-bottom:10px;
+				border:3px dashed blue;
+				text-align:center;
+			}
+
+			table {
+				border:2px solid black;
+				border-collapse:collapse;
+				width:50%;
+
+			}
+			
+			th,td {
+				border:1px solid black;
+				padding:5px;
+				text-align:center;
+			}
+			div {
+
+			}
+			#bottom {
+				font-size:36px;
+				color:red;
+			}
+			.names {
+				color:blue;
+			}
