@@ -160,13 +160,13 @@ def joint_probability(people, one_gene, two_genes, have_trait):
                 chance = PROBS["gene"][1]
             else:
                 if mother_gene_count == 0 and father_gene_count == 2 or mother_gene_count == 2 and father_gene_count == 0:
-                    chance = PROBS["mutation"]**2 + (1-PROBS["mutation"])**2
+                    chance = (PROBS["mutation"]**2) + (1-PROBS["mutation"])**2
                 elif mother_gene_count == 1 and father_gene_count == 1:
                     chance = 0.5
                 elif mother_gene_count == 1 and father_gene_count == 2 or father_gene_count == 1 and mother_gene_count == 2:
-                    chance = 0.5 * (1-PROBS["mutation"])**2 + 0.5*(1-PROBS["mutation"]) * PROBS["mutation"] + 0.5 * (PROBS["mutation"])**2
+                    chance = 0.5
                 elif mother_gene_count == 1 and father_gene_count == 0 or father_gene_count == 1 and mother_gene_count == 0:
-                    chance = 0.5 * (1-PROBS["mutation"])**2 + 0.5*(1-PROBS["mutation"]) * PROBS["mutation"] + 0.5 * (PROBS["mutation"])**2
+                    chance = 0.5
                 else: #Both Parents have 0s only or both parents have 1s only
                     chance = PROBS["mutation"] * (1-PROBS["mutation"]) * 2
                                            
@@ -180,15 +180,15 @@ def joint_probability(people, one_gene, two_genes, have_trait):
                 chance = PROBS["gene"][2]
             else:
                 if mother_gene_count == 0 and father_gene_count == 2 or mother_gene_count == 2 and father_gene_count == 0:
-                    chance = PROBS["mutation"] * (1-PROBS["mutation"]) * 2
+                    chance = PROBS["mutation"] * (1-PROBS["mutation"])
                 elif mother_gene_count == 1 and father_gene_count == 1:
-                    chance = 0.25 * PROBS["mutation"]**2 + 0.5 * PROBS["mutation"] * (1-PROBS["mutation"]) + 0.25 * (1-PROBS["mutation"])**2
+                    chance = ((0.5 * PROBS["mutation"]) + (0.5 * (1-PROBS["mutation"])))**2
                 elif mother_gene_count == 2 and father_gene_count == 2:
                     chance = (1-PROBS["mutation"])**2
                 elif mother_gene_count == 1 and father_gene_count == 2 or father_gene_count == 1 and mother_gene_count == 2:
-                    chance = 0.5 * (1-PROBS["mutation"])**2 + 0.5 * PROBS["mutation"] * (1-PROBS["mutation"])
+                    chance = (1-PROBS["mutation"])*(0.5*(1-PROBS["mutation"]) + 0.5*(PROBS["mutation"]))
                 elif mother_gene_count == 1 and father_gene_count == 0 or father_gene_count == 1 and mother_gene_count == 0:
-                    chance = 0.5 * (PROBS["mutation"])**2 + 0.5 * PROBS["mutation"] * (1-PROBS["mutation"])
+                    chance = PROBS["mutation"] * (0.5*(1-PROBS["mutation"]) + 0.5*PROBS["mutation"])
                 else: #Both parents have 0s only 
                     chance = (PROBS["mutation"])**2
  
@@ -202,15 +202,15 @@ def joint_probability(people, one_gene, two_genes, have_trait):
                 chance = PROBS["gene"][0]
             else:
                 if mother_gene_count == 0 and father_gene_count == 2 or mother_gene_count == 2 and father_gene_count == 0:
-                    chance = PROBS["mutation"] * (1-PROBS["mutation"]) * 2
+                    chance = PROBS["mutation"] * (1-PROBS["mutation"])
                 elif mother_gene_count == 1 and father_gene_count == 1:
-                    chance = 0.25 * PROBS["mutation"]**2 + 0.5 * PROBS["mutation"] * (1-PROBS["mutation"]) + 0.25 * (1-PROBS["mutation"])**2
+                    chance = (0.5 * PROBS["mutation"] + 0.5 * (1-PROBS["mutation"]))**2
                 elif mother_gene_count == 2 and father_gene_count == 2:
                     chance = (PROBS["mutation"])**2
                 elif mother_gene_count == 1 and father_gene_count == 2 or father_gene_count == 1 and mother_gene_count == 2:
-                    chance = 0.5 * (PROBS["mutation"])**2 + 0.5 * PROBS["mutation"] * (1-PROBS["mutation"])
+                    chance = PROBS["mutation"] * (0.5 * PROBS["mutation"] + 0.5 * (1-PROBS["mutation"]))
                 elif mother_gene_count == 1 and father_gene_count == 0 or father_gene_count == 1 and mother_gene_count == 0:
-                    chance = 0.5 * (1-PROBS["mutation"])**2 + 0.5 * PROBS["mutation"] * (1-PROBS["mutation"])
+                    chance = (1-PROBS["mutation"]) * (0.5 * PROBS["mutation"] + 0.5 * (1-PROBS["mutation"]))
                 else: #Both parents have 0s only
                     chance = (1-PROBS["mutation"])**2
              
